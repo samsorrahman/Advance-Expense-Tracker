@@ -11,10 +11,16 @@
     <title>ExpenseTracker</title>
 </head>
 <body>
+
+    <nav class="shadow-lg p-5">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <a href="#" class="flex">
+                <img class="h-10 mr-3" src="{% static 'myapp/images/wallet.png' %}" alt="">
+                <span class="self-center text-xl font-semibold">Expense Tracker</span>
+            </a>
+        </div>
+    </nav>
    {% block content %}
-   {% comment %} <div class=" px-10 py-10 flex">
-        <h1 class="border">WE are shinging</h1>
-   </div> {% endcomment %}
    {% endblock content %}
 </body>
 </html>

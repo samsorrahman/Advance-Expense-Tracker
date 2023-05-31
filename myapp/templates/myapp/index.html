@@ -1,7 +1,7 @@
 {% extends 'myapp/base.html' %}
 {% load static %}
 {% block content %}
-
+<div class="m-10 font-bold">Add Expense ➕</div>
 
 <form class="shadow-lg m-10 rounded-lg" method="POST">
     {% csrf_token %}
@@ -57,10 +57,10 @@
             <span class="font-bold">${{ expense.amount}}</span>
             <span class="font-bold">{{ expense.date }}</span>
             <span class="font-bold">{{ expense.category }}</span>
-            <span class="font-bold"><a href="{% url 'edit' expense.id %}">
+            <span class="pl-24"><a href="{% url 'edit' expense.id %}">
                 <img class="h-5" src="{% static 'myapp/images/edit.png' %}">
             </a></span>
-            <span class="font-bold">
+            <span class="pl-22">
                 <form method="POST" action="{% url 'delete' expense.id %}">
                     {% csrf_token %}
                    <button type="submit" name="delete">

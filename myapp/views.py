@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import ExpenseForm
 from .models import Expense
 # Create your views here.
@@ -24,6 +24,14 @@ def index(request):
 def edit(request, id):
     expense = Expense.objects.get(id=id)
     expense_form = ExpenseForm(instance=expense)
+
+    if request.method == 'POST':
+        expense = Expense.objects.get(id=id)
+        form = ExpenseForm(request.POST, instance=expense)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
     context = {
         'expense_form': expense_form,
     }

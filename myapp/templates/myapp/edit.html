@@ -2,9 +2,10 @@
 
 {% block content %}
 
-<form>
+<form method="POST">
+    {% csrf_token %}
     {{expense_form}}
-
+    <button type="submit">Edit Data</button>
 </form>
 
 {% endblock content %}

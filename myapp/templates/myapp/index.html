@@ -79,11 +79,32 @@
             </span>
         </div>
     </div>
-
-
 </div>
 
 
+
+<div class="flex">
+    <div class="w-1/3 shadow-lg ml-10 rounded-lg">
+        <h1 class="ml-10 font-bold text-gray-500">LAST 365 DAYS</h1>
+        <h1 class="ml-10 my-5 text-2xl text-green-500 font-bold">
+            ${{ yearly_sum.amount__sum|intcomma }}
+        </h1>
+    </div>
+
+    <div class="w-1/3 shadow-lg ml-10 rounded-lg">
+        <h1 class="ml-10 font-bold text-gray-500">LAST 30 DAYS</h1>
+        <h1 class="ml-10 my-5 text-2xl text-green-500 font-bold">
+            ${{ monthly_sum.amount__sum|intcomma }}
+        </h1>
+    </div>
+
+    <div class="w-1/3 shadow-lg ml-10 rounded-lg">
+        <h1 class="ml-10 font-bold text-gray-500">LAST 7 DAYS</h1>
+        <h1 class="ml-10 my-5 text-2xl text-green-500 font-bold">
+            ${{ weekly_sum.amount__sum|intcomma }}
+        </h1>
+    </div>
+</div>
 
 {% endblock content %}
 

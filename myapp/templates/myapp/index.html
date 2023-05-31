@@ -166,15 +166,45 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+
+    const cats = []
+    const cat_sums=[]
+
+    const dates=[]
+    const sums=[]
+    
+    const catSumDiv = document.getElementById('cat-sum-table').getElementsByTagName('div');
+    
+    for(i=0;i<catSumDiv.length;i++){
+        if(i%2 ==1){
+            cat_sums.push(catSumDiv[i].innerText.replace("$",""))
+        }else{
+            cats.push(catSumDiv[i].innerText)
+        }
+    }
+
+
+    const dailySumDiv = document.getElementById('30-day-table').getElementsByTagName('div');
+    
+    for(i=0;i<dailySumDiv.length;i++){
+        if(i%2 ==1){
+            sums.push(dailySumDiv[i].innerText.replace("$",""))
+        }else{
+            dates.push(dailySumDiv[i].innerText)
+        }
+    }
+    
+
+
   const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
     type: 'pie',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: cats,
       datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        label: 'Expense across categories',
+        data: cat_sums,
         backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',

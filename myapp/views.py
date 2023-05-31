@@ -19,3 +19,13 @@ def index(request):
 
     }
     return render(request, 'myapp/index.html', context)
+
+
+def edit(request, id):
+    expense = Expense.objects.get(id=id)
+    expense_form = ExpenseForm(instance=expense)
+    context = {
+        'expense_form': expense_form,
+    }
+
+    return render(request, 'myapp/edit.html', context)

@@ -2,7 +2,6 @@
 
 {% block content %}
 
-<h1>This is updated template</h1>
 
 <form class="shadow-lg m-10 rounded-lg" method="POST">
     {% csrf_token %}
@@ -58,7 +57,7 @@
             <span class="font-bold">${{ expense.amount}}</span>
             <span class="font-bold">{{ expense.date }}</span>
             <span class="font-bold">{{ expense.category }}</span>
-            <span class="font-bold"><a href="">Edit</a></span>
+            <span class="font-bold"><a href="{% url 'edit' expense.id %}">Edit</a></span>
             <span class="font-bold"><a href="">Delete</a></span>
 
         </div>

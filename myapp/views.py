@@ -37,3 +37,11 @@ def edit(request, id):
     }
 
     return render(request, 'myapp/edit.html', context)
+
+
+def delete(request, id):
+    if request.method == 'POST' and 'delete' in request.POST:
+        expense = Expense.objects.get(id=id)
+        expense.delete()
+
+    return redirect('index')

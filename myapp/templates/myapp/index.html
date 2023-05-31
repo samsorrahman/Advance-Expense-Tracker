@@ -106,6 +106,7 @@
     </div>
 </div>
 
+{% comment %} last 30 days sum {% endcomment %}
 
 <div class="flex">
     <div class="w-1/2 shadow-lg m-10">
@@ -128,6 +129,29 @@
             {% endfor %}
         </div>
     </div>
+
+    {% comment %} Categorical sum {% endcomment %}
+    <div class="w-1/2 shadow-lg m-10">
+        <div class="flex flex-wrap space-x-40 font-bold px-20 py-5">
+            <span>Categorical expenses</span>
+        </div>
+        <hr>
+        <div id="cat-sum-table">
+            {% for categorical_sum in categorical_sums %}
+                <div class="flex flex-wrap px-20 py-5">
+                    <span>
+                        {{categorical_sum.category}}
+                    </span>
+                </div>
+                <div class="flex flex-wrap px-20 py-5">
+                    <span class="text-green-500">
+                        $ {{categorical_sum.sum}}
+                    </span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
 

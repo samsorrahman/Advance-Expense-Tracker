@@ -238,12 +238,12 @@
   const ctx1 = document.getElementById('myChart1');
 
   new Chart(ctx1, {
-    type: 'pie',
+    type: 'line',
     data: {
-      labels: cats,
+      labels: dates,
       datasets: [{
-        label: 'Expense across categories',
-        data: cat_sums,
+        label: 'Sum of daily Expenses',
+        data: sums,
         backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -273,7 +273,7 @@
   });
 
 
-
+  
 </script>
 
 {% endblock content %}

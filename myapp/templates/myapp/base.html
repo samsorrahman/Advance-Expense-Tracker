@@ -13,22 +13,7 @@
     <title>ExpenseTracker</title>
 </head>
 <body>
-        <nav class="shadow-lg p-5">
-            <div class="container flex flex-wrap justify-between items-center mx-auto">
-                <a href="#" class="flex">
-                    <img class="h-10 mr-3" src="{% static 'myapp/images/wallet.png' %}" alt="">
-                    <span class="self-center text-xl font-semibold">Expense Tracker</span>
-                    <span class="ml-auto self-center text-xl font-semibold">
-                        {% if request.user.is_authenticated %} 
-                        <a href="{% url 'logout' %}" class="text-blue-500 font-semibold">Logout</a>
-                        {% else %} 
-                        <a href="{% url 'register' %}" class="text-blue-500 font-semibold">Login/SignUp</a>
-                        {% endif %}
-                    </span>
-                </a>
-            </div>
-        </nav>
-
+    {% include 'myapp/navbar.html' %}
  
         {% if messages %}
 
